@@ -5,6 +5,7 @@ import About from './components/About';
 import NavBar from './components/NavBar';
 import TextForm from './components/TextForm';
 import React,{useState} from 'react'
+import Contact from './components/Contact';
 
 
 function App() {
@@ -54,13 +55,15 @@ function App() {
       {/* <NavBar title="TextUtils" aboutText="About" contactText="Contact" mode={mode} toggleMode={toggleMode} selectColor={selectColor}/>
       <Alerts alert={alert}/>
       <TextForm showAlert={showAlert} heading="Enter the Text to Analyize" mode={mode} newColor={newColor}/>
-      <About/> */}
+      <About/>
+      <Contact/> */}
       <BrowserRouter>
       <NavBar title="TextUtils" aboutText="About" contactText="Contact" mode={mode} toggleMode={toggleMode} selectColor={selectColor}/>
       <Alerts alert={alert}/>
         <Routes>
           <Route path='/' element={<TextForm showAlert={showAlert} heading="Enter the Text to Analyize" mode={mode} newColor={newColor}/>}/>
-          <Route path='/About' element={<About/> }/>
+          <Route path='/About' element={<About mode={mode}/> }/>
+          <Route path='/Contact' element={<Contact/> }/>
         </Routes>
       </BrowserRouter>
     </>

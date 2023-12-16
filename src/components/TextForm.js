@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+ import React, { useState } from "react";
 
 export default function TextForm(props) {
 	const [text, setText] = useState("");
@@ -55,26 +55,26 @@ export default function TextForm(props) {
 						onChange={handleOnChange}
 						style={{
 							backgroundColor: props.mode === "dark" ? props.newColor : "white",
-							color: props.mode === "dark" ? "white" : "black",
+							color: "black"
 						}}
 					></textarea>
 				</div>
-				<button className="btn btn-primary " onClick={handleUpperCase}>
+				<button  disabled={text.length===0} className="btn btn-primary  my-2" onClick={handleUpperCase}>
 					Convert to UpperCase
 				</button>
-				<button className="btn btn-primary mx-2" onClick={handleLowerCase}>
+				<button  disabled={text.length===0} className="btn btn-primary mx-2 my-2" onClick={handleLowerCase}>
 					Convert to LowerCase
 				</button>
-				<button className="btn btn-primary mx-2" onClick={handleClearText}>
+				<button  disabled={text.length===0} className="btn btn-primary mx-2 my-2" onClick={handleClearText}>
 					Clear The Text
 				</button>
-				<button className="btn btn-primary mx-2" onClick={handleReadText}>
+				<button disabled={text.length===0}  className="btn btn-primary mx-2 my-2" onClick={handleReadText}>
 					Read The Text
 				</button>
-				<button className="btn btn-primary mx-2" onClick={handleReverse}>
+				<button disabled={text.length===0}  className="btn btn-primary mx-2 my-2" onClick={handleReverse}>
 					Reverese The Text
 				</button>
-				<button className="btn btn-primary mx-2" onClick={handleCapitalise}>
+				<button  disabled={text.length===0} className="btn btn-primary mx-2 my-2" onClick={handleCapitalise}>
 					Capitalise The Text
 				</button>
 				<div className="container my-3">
@@ -91,7 +91,7 @@ export default function TextForm(props) {
 					<p>
 						{text.length > 0
 							? text
-							: "Enter Your Text in the Box to Preview it Here"}
+							: "Nothing to Preview"}
 					</p>
 				</div>
 			</div>
